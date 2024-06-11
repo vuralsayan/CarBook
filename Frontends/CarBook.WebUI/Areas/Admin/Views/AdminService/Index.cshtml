@@ -1,0 +1,50 @@
+﻿@model List<ResultServiceDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+@* ADMIN SERVICE INDEX *@
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hizmet Bilgileri Alanı</h4>
+                <p class="card-subtitle mb-4">Anasayfa ve hizmetler bölümünde yer alan hizmet listesiyle işlemleri buradan gerçekleştirebilirsiniz. <span class="text-danger">Tema bütünlüğü için lütfen 4 adet hizmet bilgisi giriniz.</span></p>
+                <div class="table-responsive">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Hizmet Adı</th>
+                                    <th>Açıklama</th>
+                                    <th>İkon</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <th>@count</th>
+                                        <td>@item.Title</td>
+                                        <td>@item.Description</td>
+                                        <td>@item.IconUrl</td>
+                                        <td><a href="/Admin/AdminService/RemoveService/@item.ServiceID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/AdminService/UpdateService/@item.ServiceID" class="btn btn-primary">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <br />
+                    <a href="/Admin/AdminService/CreateService/" class="btn btn-success">Yeni Hizmet Girişi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+﻿<div class="row">
+    <div class="col-md-6 col-xl-3">
+        <div class="card bg-primary border-primary">
+            <div class="card-body">
+                <div class="mb-4">
+                    <span class="badge badge-soft-light float-right">Aktif Araçlar</span>
+                    <h5 class="card-title mb-0 text-white">Araç Sayısı</h5>
+                </div>
+                <div class="row d-flex align-items-center mb-4">
+                    <div class="col-8">
+                        <h2 class="d-flex align-items-center mb-0 text-white">
+                            @ViewBag.CarCount
+                        </h2>
+                    </div>
+                    <div class="col-4 text-right">
+                        <span class="text-white-50">12.5% <i class="mdi mdi-arrow-up"></i></span>
+                    </div>
+                </div>
+
+                <div class="progress badge-soft-light shadow-sm" style="height: 5px;">
+                    <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.CarCount%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card bg-success border-success">
+            <div class="card-body">
+                <div class="mb-4">
+                    <span class="badge badge-soft-light float-right">Aktif Lokasyonlar</span>
+                    <h5 class="card-title mb-0 text-white">Lokasyon Sayısı</h5>
+                </div>
+                <div class="row d-flex align-items-center mb-4">
+                    <div class="col-8">
+                        <h2 class="d-flex align-items-center text-white mb-0">
+                            @ViewBag.LocationCount
+                        </h2>
+                    </div>
+                    <div class="col-4 text-right">
+                        <span class="text-white-50">18.71% <i class="mdi mdi-arrow-down"></i></span>
+                    </div>
+                </div>
+
+                <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                    <div class="progress-bar bg-light" role="progressbar" style="width: 38%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card bg-warning border-warning">
+            <div class="card-body">
+                <div class="mb-4">
+                    <span class="badge badge-soft-light float-right">Aktif Yazarlar</span>
+                    <h5 class="card-title mb-0 text-white">Yazar Sayısı</h5>
+                </div>
+                <div class="row d-flex align-items-center mb-4">
+                    <div class="col-8">
+                        <h2 class="d-flex align-items-center text-white mb-0">
+                            @ViewBag.AuthorCount
+                        </h2>
+                    </div>
+                    <div class="col-4 text-right">
+                        <span class="text-white-50">57% <i class="mdi mdi-arrow-up"></i></span>
+                    </div>
+                </div>
+
+                <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                    <div class="progress-bar bg-light" role="progressbar" style="width: 68%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card bg-info border-info">
+            <div class="card-body">
+                <div class="mb-4">
+                    <span class="badge badge-soft-light float-right">Aktif Bloglar</span>
+                    <h5 class="card-title mb-0 text-white">Blog Sayısı</h5>
+                </div>
+                <div class="row d-flex align-items-center mb-4">
+                    <div class="col-8">
+                        <h2 class="d-flex align-items-center text-white mb-0">
+                            @ViewBag.BlogCount
+                        </h2>
+                    </div>
+                    <div class="col-4 text-right">
+                        <span class="text-white-50">17.8% <i class="mdi mdi-arrow-down"></i></span>
+                    </div>
+                </div>
+
+                <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                    <div class="progress-bar bg-light" role="progressbar" style="width: 57%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

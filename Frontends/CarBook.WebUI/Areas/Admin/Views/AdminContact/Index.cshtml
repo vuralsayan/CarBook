@@ -1,0 +1,50 @@
+﻿@using System.Globalization
+@model List<ResultContactDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+@* ADMIN CONTACT INDEX *@
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Gelen Mesaj Sayfası</h4>
+                <p class="card-subtitle mb-4">
+                    Ana Sayfa üzerinden kullanıcıların iletişim kısmı aracılığıyla gönderdikleri mesajların bulunduğu sayfadır. İlgili satıra tıklayıp mesajın detayını görebilirsiniz.
+                </p>
+
+                <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Gönderen</th>
+                            <th>Mail</th>
+                            <th>Konu</th>
+                            <th>Tarih</th>
+                            <th>Mesaj</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ContactID</td>
+                                <td>@item.Name</td>
+                                <td>@item.Email</td>
+                                <td>@item.Subject</td>
+                                <td>@item.SendDate.ToString("dd MMM yyy", new CultureInfo("tr-TR"))</td>
+                                <td>@item.Message</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+

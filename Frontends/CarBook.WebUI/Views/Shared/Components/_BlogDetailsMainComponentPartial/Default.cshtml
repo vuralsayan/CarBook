@@ -1,0 +1,17 @@
+﻿@model GetBlogById
+@* BLOG MAIN CONTENT INDEX *@
+<div class="col-md-8 ftco-animate">
+    <h2 class="mb-3">@Model.Title</h2>
+    <p>@Model.Description</p>
+    <vc:_blog-details-tag-cloud-by-blog-component-partial id="ViewBag.BlogID" />
+
+    <vc:_blog-details-author-about-component-partial id="ViewBag.BlogID" />
+
+    <div class="pt-5 mt-5">
+        <h3 class="mb-5">@ViewBag.CommentCount Yorum</h3>
+        <vc:_comment-list-by-blog-component-partial id="ViewBag.BlogID" />
+
+        <partial name="~/Views/Blog/CreateComment.cshtml" model="ViewBag.BlogID"/>
+    </div>
+
+</div>

@@ -1,0 +1,52 @@
+﻿@model List<ResultFooterAddressDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+@* ADMIN FOOTER ADDRESS INDEX *@
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">İletişim ve Footer Alanı Adres Sayfası</h4>
+                <p class="card-subtitle mb-4">İletişim ve adreslerle ilgili işlemleri buradan gerçekleştirebilirsiniz. <span class="text-danger">Tema bütünlüğü için lütfen 1 adet adres bilgisi giriniz.</span></p>
+                <div class="table-responsive">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Adres</th>
+                                    <th>Açıklama</th>
+                                    <th>Telefon</th>
+                                    <th>Email</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <th>@count</th>
+                                        <td>@item.Address</td>
+                                        <td>@item.Description</td>
+                                        <td>@item.Phone</td>
+                                        <td>@item.Email</td>
+                                        <td><a href="/Admin/AdminFooterAddress/RemoveFooterAddress/@item.FooterAddressID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/AdminFooterAddress/UpdateFooterAddress/@item.FooterAddressID" class="btn btn-primary">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <br />
+                    <a href="/Admin/AdminFooterAddress/CreateFooterAddress/" class="btn btn-success">Yeni Adres Girişi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

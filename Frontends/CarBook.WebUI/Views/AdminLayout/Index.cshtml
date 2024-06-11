@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+@* ADMIN LAYOUT *@
+
+<!DOCTYPE html>
+<html lang="en">
+<vc:_admin-header-component-partial />
+<body>
+    <div id="layout-wrapper">
+        <vc:_admin-navbar-component-partial />
+        <vc:_admin-sidebar-component-partial />
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    @RenderBody()
+                    <vc:_admin-footer-component-partial />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-overlay"></div>
+    <vc:_admin-script-component-partial />
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿@model List<ResultBannerDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+@* ADMIN BANNER INDEX *@
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Ana Sayfa Banner Alanı</h4>
+                <p class="card-subtitle mb-4">Ana sayfanın banner alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz. <span class="text-danger">Tema bütünlüğü için lütfen 1 adet banner alanı giriniz.</span></p>
+                <div class="table-responsive">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Başlık</th>
+                                    <th>Açıklama</th>
+                                    <th>Video Açıklaması</th>
+                                    <th>Video Url</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                    <th>Youtube'da Aç</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Title</td>
+                                        <td>@item.Description</td>
+                                        <td>@item.VideoDescription</td>
+                                        <td>@item.VideoUrl</td>
+                                        <td><a href="/Admin/AdminBanner/RemoveBanner/@item.BannerID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/AdminBanner/UpdateBanner/@item.BannerID" class="btn btn-secondary">Güncelle</a></td>
+                                        <td><a href="/Admin/AdminBanner/UpdateBanner/@item.BannerID" class="btn btn-info">Youtube'da Aç'</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <br />
+                    <a href="/Admin/AdminBanner/CreateBanner/" class="btn btn-success">Yeni Banner Girişi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

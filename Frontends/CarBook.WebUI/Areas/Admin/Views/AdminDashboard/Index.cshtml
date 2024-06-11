@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h4 class="mb-0 font-size-18">Dashboard</h4>
+        </div>
+    </div>
+</div>
+<vc:_admin-dashboard-statistic-component-partial />
+<div class="row">
+    <vc:_admin-dashboard-chart1-component-partial />
+    <vc:_admin-dashboard-chart3-component-partial />
+    <vc:_admin-dashboard-chart2-component-partial />
+</div>
+<div class="row">
+    <vc:_admin-dashboard-car-pricing-list-component-partial />
+    <vc:_admin-dashboard-blog-list-component-partial />
+</div>

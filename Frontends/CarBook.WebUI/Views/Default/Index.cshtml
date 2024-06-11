@@ -1,0 +1,119 @@
+﻿@model ResultLocationDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+@* DEFAULT INDEX *@
+<!DOCTYPE html>
+<html lang="en">
+<vc:_head-ui-layout-component-partial />
+<body>
+
+    <style>
+
+        #drop option {
+            color: black;
+        }
+
+
+    </style>
+
+    <vc:_navbar-ui-layout-component-partial />
+
+    <vc:_default-banner-ui-component-partial />
+
+    <section class="ftco-section ftco-no-pt bg-light">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-md-12	featured-top">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 d-flex align-items-center">
+                            <form method="post" asp-controller="Default" asp-action="Index" class="request-form ftco-animate bg-primary">
+                                <h2>Aracınızı Kiralayın</h2>
+                                <div class="form-group">
+                                    <label for="" class="label">Nereden Alacaksınız?</label>
+                                    <select class="form-control" id="drop" name="pickUpLocation" asp-for="LocationID" asp-items="@ViewBag.Locations">
+                                        <option disabled selected>Lütfen Alış Lokasyonunu Seçiniz</option>
+                                    </select>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="form-group mr-2">
+                                        <label for="" class="label">Alış Tarihi</label>
+                                        <input type="date" class="form-control" name="pickUpDate" placeholder="Alış Tarihi">
+                                    </div>
+                                    <div class="form-group ml-2">
+                                        <label for="" class="label">İade Tarihi</label>
+                                        <input type="date" class="form-control" name="dropOffDate" placeholder="İade Tarihi">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="label">Alış Saati</label>
+                                    <input type="time" class="form-control" name="pickUpTime" placeholder="Alış Saati">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="label">İade Saati</label>
+                                    <input type="time" class="form-control" name="dropOffTime" placeholder="İade Saati">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-secondary py-3 px-4">Uygun Araçları Listele</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-8 d-flex align-items-center">
+                            <div class="services-wrap rounded-right w-100">
+                                <h3 class="heading-section mb-4">Araç Kiralamanın En Kolay Yolu</h3>
+                                <div class="row d-flex mb-4">
+                                    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                                        <div class="services w-100 text-center">
+                                            <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-route"></span></div>
+                                            <div class="text w-100">
+                                                <h3 class="heading mb-2">Almak İstediğiniz Konumu Seçin</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                                        <div class="services w-100 text-center">
+                                            <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-handshake"></span></div>
+                                            <div class="text w-100">
+                                                <h3 class="heading mb-2">En İyi Teklifleri Gör</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                                        <div class="services w-100 text-center">
+                                            <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-rent"></span></div>
+                                            <div class="text w-100">
+                                                <h3 class="heading mb-2">Kiralamayı Tamamla</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p><a href="#" class="btn btn-primary py-3 px-4">Seyahatinin Keyfini Çıkar</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <vc:_default-last5-cars-with-brands-component-partial />
+
+    <vc:_about-us-component-partial />
+
+    <vc:_service-component-partial />
+
+    <vc:_become-a-driver-component-partial />
+
+    <vc:_testimonial-component-partial />
+
+    <vc:_last3-blogs-with-authors-component-partial />
+
+    <vc:_default-statistics-component-partial />
+
+    <vc:_footer-ui-layout-component-partial />
+
+    <vc:_script-ui-layout-component-partial />
+
+</body>
+</html>
+

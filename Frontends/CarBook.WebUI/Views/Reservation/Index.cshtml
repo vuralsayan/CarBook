@@ -1,0 +1,54 @@
+﻿@model CreateReservationDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<section class="ftco-section contact-section">
+    <div class="container">
+        <div class="row d-flex mb-5 contact-info">
+            <div class="col-md-12 block-9 mb-md-5">
+                <form class="bg-light p-5 contact-form" method="post">
+                    <div class="form-group">
+                        <input type="hidden" value="@ViewBag.carID" class="form-control" placeholder="Almak İstediğiniz Araba Modeli" asp-for="CarID">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Adınız Soyadınız" asp-for="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Soyadınız" asp-for="Surname">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Mail Adresiniz" asp-for="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Telefon Numaranız" asp-for="Phone">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" asp-for="PickUpLocationID" asp-items="@ViewBag.Locations">
+                            <option disabled selected>Lütfen Alış Lokasyonunu Seçiniz</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" asp-for="DropOffLocationID" asp-items="@ViewBag.Locations">
+                            <option disabled selected>Lütfen Teslim Lokasyonunu Seçiniz</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Yaşınız" asp-for="Age">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Ehliyet Yılınız" asp-for="DriverLicenseYear">
+                    </div>
+                    <div class="form-group">
+                        <textarea cols="30" rows="5" class="form-control" placeholder="Rezervasyon ile ilgili eklemek istedikleriniz..." asp-for="Description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Rezervasyon Tamamla" class="btn btn-primary py-3 px-5">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+

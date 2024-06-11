@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "CarDetail";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<section class="ftco-section ftco-car-details">
+    <div class="container">
+        <vc:_car-detail-main-car-feature-component-partial id="ViewBag.carID" />
+        <div class="row">
+            <div class="col-md-12 pills">
+                <div class="bd-example bd-example-tabs">
+                    <vc:_car-detail-tab-pane-component-partial />
+                    <div class="tab-content" id="pills-tabContent">
+                        <vc:_car-detail-car-feature-by-car-id-component-partial id="ViewBag.carID" />
+                        <vc:_car-detail-description-component-partial id="ViewBag.carID" />
+                        <vc:_car-detail-comments-by-car-id-component-partial id="ViewBag.carID" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

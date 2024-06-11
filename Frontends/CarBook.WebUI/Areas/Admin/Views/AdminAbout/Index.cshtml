@@ -1,0 +1,49 @@
+﻿@model List<ResultAboutDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+@* ADMIN ABOUT INDEX *@
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Ana Sayfa Hakkımda Alanı</h4>
+                <p class="card-subtitle mb-4">Ana sayfanın hakkımda alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz. <span class="text-danger">Tema bütünlüğü için lütfen 1 adet banner alanı giriniz.</span></p>
+                <div class="table-responsive">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Başlık</th>
+                                    <th>Açıklama</th>
+                                    <th>Resim Url</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Title</td>
+                                        <td>@item.Description</td>
+                                        <td>@item.ImageUrl</td>
+                                        <td><a href="/Admin/AdminAbout/RemoveAbout/@item.AboutID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/AdminAbout/UpdateAbout/@item.AboutID" class="btn btn-secondary">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <br />
+                    <a href="/Admin/AdminAbout/CreateAbout/" class="btn btn-success">Yeni Hakkımda Girişi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

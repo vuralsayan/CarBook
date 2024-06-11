@@ -1,0 +1,9 @@
+﻿@model List<GetTagCloudByBlogIdDto>
+<div class="tag-widget post-tag-container mb-5 mt-5">
+    <div class="tagcloud">
+        @foreach (var item in Model)
+        {
+            <a href="#" onclick="return false" class="tag-cloud-link">@item.TagName</a>
+        }
+    </div>
+</div>

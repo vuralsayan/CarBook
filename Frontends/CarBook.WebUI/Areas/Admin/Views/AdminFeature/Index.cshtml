@@ -1,0 +1,47 @@
+﻿@model List<ResultFeatureDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+@* ADMIN FEATURE INDEX *@
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Araba Özellikleri Listesi</h4>
+                <p class="card-subtitle mb-4">Arabaların özellikleriyle ilgili işlemlerinizi bu sayfa üzerinden gerçekleştirebilirsiniz. <span class="text-danger">Tema bütünlüğünü sağlamak için lütfen 3'ün katı şeklinde veri giriniz.</span></p>
+                <div class="table-responsive">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Özellik Adı</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@item.FeatureID</th>
+                                        <td>@item.Name</td>
+                                        <td><a href="/Admin/AdminFeature/RemoveFeature/@item.FeatureID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/AdminFeature/UpdateFeature/@item.FeatureID" class="btn btn-secondary">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <br />
+                    <a href="/Admin/AdminFeature/CreateFeature/" class="btn btn-success">Yeni Özellik Girişi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

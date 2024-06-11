@@ -1,0 +1,46 @@
+﻿@model List<ResultLocationDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+@* ADMIN LOCATION INDEX *@
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Lokasyon Bilgileri Alanı</h4>
+                <p class="card-subtitle mb-4">Anasayfa ve araç kiralama sayfasında yer alan araçların kiralama noktalarıyla ilgili işlemleri buradan gerçekleştirebilirsiniz.></p>
+                <div class="table-responsive">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Lokasyon</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                    <th>Konumu Aç</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.LocationID</th>
+                                        <td>@item.Name</td>
+                                        <td><a href="/Admin/AdminLocation/RemoveLocation/@item.LocationID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/AdminLocation/UpdateLocation/@item.LocationID" class="btn btn-primary">Güncelle</a></td>
+                                        <td><a href="/Admin/AdminLocation/LocationDetail/@item.LocationID" class="btn btn-info">Konumu Aç</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <br />
+                    <a href="/Admin/AdminLocation/CreateLocation/" class="btn btn-success">Yeni Lokasyon Girişi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

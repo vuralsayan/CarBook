@@ -1,0 +1,46 @@
+﻿@model List<ResultBrandDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+@* ADMIN BRAND INDEX *@
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Marka Listesi</h4>
+                <p class="card-subtitle mb-4">Markalarla ilgili işlemlerinizi bu sayfa üzerinden gerçekleştirebilirsiniz.</p>
+                <div class="table-responsive">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Marka Adı</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@item.BrandID</th>
+                                        <td>@item.Name</td>
+                                        <td><a href="/Admin/AdminBrand/RemoveBrand/@item.BrandID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/AdminBrand/UpdateBrand/@item.BrandID" class="btn btn-secondary">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <br />
+                    <a href="/Admin/AdminBrand/CreateBrand/" class="btn btn-success">Yeni Marka Girişi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,17 @@
+﻿@using System.Globalization
+@model List<ResultCommentDto>
+<ul class="comment-list">
+    @foreach (var item in Model)
+    {
+        <li class="comment">
+            <div class="vcard bio">
+                <img src="~/carbook-master/images/person_1.jpg" alt="Image placeholder">
+            </div>
+            <div class="comment-body">
+                <h3>@item.Name</h3>
+                <div class="meta">@item.CreatedDate.ToString("dd MMM yyyy HH:mm", new CultureInfo("tr-TR"))</div>
+                <p>@item.CommentText</p>
+            </div>
+        </li>
+    }
+</ul>

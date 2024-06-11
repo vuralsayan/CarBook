@@ -1,0 +1,48 @@
+﻿@model List<ResultSocialMediaDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+@* ADMIN SOCIAL MEDIA INDEX *@
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Sosyal Medya Alanı</h4>
+                <p class="card-subtitle mb-4">Sosyal medya hesaplarıyla ilgili işlemleri buradan gerçekleştirebilirsiniz. <span class="text-danger">Tema bütünlüğü için lütfen 3 adet hizmet bilgisi giriniz.</span></p>
+                <div class="table-responsive">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Sosyal Medya Adı</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                    <th>Aç</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <th>@count</th>
+                                        <td>@item.Name</td>
+                                        <td><a href="/Admin/AdminSocialMedia/RemoveSocialMedia/@item.SocialMediaID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/AdminSocialMedia/UpdateSocialMedia/@item.SocialMediaID" class="btn btn-primary">Güncelle</a></td>
+                                        <td><a href="@item.Url" target="_blank" class="btn btn-info">Aç</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <br />
+                    <a href="/Admin/AdminSocialMedia/CreateSocialMedia/" class="btn btn-success">Yeni Sosyal Medya Girişi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

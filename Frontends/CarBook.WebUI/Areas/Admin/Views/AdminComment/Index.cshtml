@@ -1,0 +1,38 @@
+﻿@model List<ResultCommentDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yorum Listesi - BlogID : @ViewBag.BlogID</h4>
+                <p class="card-subtitle mb-4">İligli bloga ait yorumlarla ilgili işlemleri buradan gerçekleştirebilirsiniz</p>
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Yorum ID : @item.CommentID
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">@item.Name</h4>
+                                <p class="card-text">
+                                    @item.CommentText
+                                </p>
+                                <a href="#" class="btn btn-primary waves-effect waves-light">Go somewhere</a>
+                            </div>
+                            <div class="card-footer text-muted">
+                                @item.CreatedDate
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,27 @@
+﻿@model UpdateLocationDto
+@{
+    ViewData["Title"] = "UpdateLocation";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Lokasyon Bilgisini Güncelleme Sayfası</h4>
+                <p class="card-subtitle mb-4">Lokasyon bilgilerinizi buraadn güncelleyebilirsiniz.</p>
+                <form method="post">
+                    <input  type="hidden" asp-for="LocationID"/>
+                    <div class="form-group">
+                        <label>Lokasyon Adı</label>
+                        <input type="text" class="form-control" placeholder="Lokasyon Bilgisi Giriniz" asp-for="Name">
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Lokasyon Bilgisini Güncelle</button>
+                    <a href="/Admin/AdminLocation/Index/" class="btn btn-danger waves-effect waves-light">İptal</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,45 @@
+﻿@model List<ResultPricingDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+@* ADMIN PRICING INDEX *@
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Ödeme Türleri Alanı</h4>
+                <p class="card-subtitle mb-4">Araçların saatlik, günlük, haftalık veya benzeri kiralama opsiyonlarının buradan düzenleyebilirsiniz.</p>
+                <div class="table-responsive">
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Periyot Adı</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.PricingID</td>
+                                        <td>@item.Name</td>
+                                        <td><a href="/Admin/AdminPricing/RemovePricing/@item.PricingID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Admin/AdminPricing/UpdatePricing/@item.PricingID" class="btn btn-primary">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <br />
+                    <a href="/Admin/AdminPricing/CreatePricing/" class="btn btn-success">Yeni Ödeme Türü Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

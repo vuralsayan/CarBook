@@ -1,0 +1,99 @@
+﻿@model List<ResultFooterAddressDto>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#btn1').click(function () {
+            Swal.fire({
+                title: "Şartlar & Koşullar",
+                text: "CarBook araba kiralama hizmetlerini kullanarak, en az 21 yaşında olduğunuzu ve geçerli bir sürücü belgesine sahip olduğunuzu kabul edersiniz. Rezervasyonlar online veya telefonla yapılabilir ve ödeme kredi kartı, banka kartı veya nakit olarak kabul edilir. Kiralama süresi en az 24 saattir ve araçların zorunlu trafik sigortası kapsamındadır; ek ücret karşılığında kasko sigortası da sunulmaktadır. Araçlar sadece sözleşmede belirtilen kişiler tarafından kullanılabilir ve kira başlangıcında belirlenen yakıt seviyesi ile iade edilmelidir. İade süresine uyulmaması durumunda ek ücretler uygulanabilir. CarBook, kiralama süresi boyunca meydana gelebilecek mekanik arızalar için sorumluluk alır ve aracın yasa dışı faaliyetlerde kullanılmaması gerektiğini belirtir.",
+                icon: "info"
+            });
+        });
+
+        $('#btn2').click(function () {
+            Swal.fire({
+                title: "Güvenlik",
+                text: "CarBook olarak, web sitemizi kullanan tüm müşterilerimizin veri güvenliğini en üst düzeyde tutmak için çeşitli güvenlik önlemleri uygulamaktayız. Kullanıcı kimlik doğrulama işlemlerinde JSON Web Token (JWT) teknolojisini kullanıyoruz. JWT, kullanıcı oturumlarını güvenli bir şekilde yönetmek ve yetkisiz erişimleri önlemek için güçlü bir yöntemdir. Ayrıca, kullanıcı bilgilerinin ve hassas verilerin korunması için SHA- 256 şifreleme algoritmasını kullanmaktayız.SHA - 256, verilerin güvenli bir şekilde saklanmasını ve iletilmesini sağlayarak, kötü niyetli kişilerin bu bilgilere erişimini engeller. Ödeme işlemleriniz sırasında da en yüksek güvenlik standartlarını uyguluyoruz.Kredi kartı ve diğer ödeme bilgileri, güvenli ödeme ağ geçitleri üzerinden işlenir ve üçüncü taraflarla paylaşılmaz.",
+                icon: "info"
+            });
+        });
+
+        $('#btn3').click(function () {
+            Swal.fire({
+                title: "Çerez Politikası",
+                text: "CarBook olarak, web sitemiz üzerinde çerezleri kullanarak kullanıcı deneyimini geliştirmek ve web sitesinin verimli çalışmasını sağlamak için çaba gösteriyoruz. Çerezler, kullanıcıların tercihlerini hatırlamamıza ve web sitesini ziyaret edenlerin davranışlarını analiz etmemize yardımcı olur. Ayrıca, reklamları kişiselleştirmek ve hedeflemek için çerezleri kullanabiliriz. Web sitemizi ziyaret ederek çerez kullanımını kabul etmiş sayılırsınız. Çerezleri nasıl kontrol edeceğiniz ve devre dışı bırakacağınız hakkında daha fazla bilgi için lütfen çerez politikamızı inceleyin.",
+                icon: "info"
+            });
+        });
+    });
+</script>
+
+@foreach (var item in Model)
+{
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2"><a href="#" class="logo">Car<span>book</span></a></h2>
+                        <p>@item.Description</p>
+                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-5">
+                        <h2 class="ftco-heading-2">Bilgiler</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="/About/Index/" class="py-2 d-block">Hakkımızda</a></li>
+                            <li><a href="/Service/Index/" class="py-2 d-block">Hizmetler</a></li>
+                            <li><a href="javascript:void(0)" id="btn1" class="py-2 d-block">Şartlar & Koşullar</a></li>
+                            <li><a href="javascript:void(0)" id="btn2" class="py-2 d-block">Güvenlik</a></li>
+                            <li><a href="javascript:void(0)" id="btn3" class="py-2 d-block">Çerez Politikası</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Müşteri Desteği</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="py-2 d-block">Sıkça Sorulanlar</a></li>
+                            <li><a href="#" class="py-2 d-block">Ödeme Yöntemleri</a></li>
+                            <li><a href="/CarPricing/Index/" class="py-2 d-block">Kiralama</a></li>
+                            <li><a href="#" class="py-2 d-block">How it works</a></li>
+                            <li><a href="/Contact/Index/" class="py-2 d-block">Bize Ulaşın</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Bir sorunuz mu var?</h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><span class="icon icon-map-marker"></span><span class="text">@item.Address</span></li>
+                                <li><a href="javascript:void(0)"><span class="icon icon-phone"></span><span class="text">@item.Phone</span></a></li>
+                                <li><a href="javascript:void(0)"><span class="icon icon-envelope"></span><span class="text">@item.Email</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+}
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>

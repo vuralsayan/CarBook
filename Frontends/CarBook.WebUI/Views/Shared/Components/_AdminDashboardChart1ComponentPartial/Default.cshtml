@@ -1,0 +1,43 @@
+﻿<script src="~/js/chart.js"></script>
+<div class="col-lg-4">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title d-inline-block">Yıllık Kiralama Sayıları</h4>
+            <div style="height: 260px;">
+                <canvas id="myChart"></canvas>
+                <script>
+                    var values = document.getElementById("myChart").getContext('2d');
+                    var myChart = new Chart(values, {
+                        type: 'line',
+                        data: {
+                            labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
+                            datasets: [{
+                                label: 'Yıllık Kiralama Grafiği',
+                                data: [120, 190, 235, 270, 240, 367],
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
+            <div class="row text-center mt-4">
+                <div class="col-6">
+                    <h4>343.67</h4>
+                    <p class="text-muted mb-0">Son Ayın Cirosu</p>
+                </div>
+                <div class="col-6">
+                    <h4>56</h4>
+                    <p class="text-muted mb-0">Kullanımdaki Araç Sayısı</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
